@@ -245,6 +245,29 @@ button:hover {
 #progress-text {
     font-size: 17px;
 }
+.savings {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    column-gap: 20px;
+    align-items: start;
+}
+
+.savings h2,
+.savings p {
+    grid-column: 1 / -1;
+}
+
+.savings input {
+    grid-column: 1;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.progress-container {
+    grid-column: 2;
+    grid-row: 2 / 5;
+}
 
 /* MOBILVENLIGT DESIGN */
 
