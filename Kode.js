@@ -133,9 +133,22 @@ function renderTransaktioner() {
     }
 }
 
-
 // FUNKTION: Fjerner en transaktion
 function fjernTransaktion(id) {
+
+    // FIND: Finder transaktionen, før den fjernes
+    const fjernet = transaktioner.find(function (transaktion) {
+        return transaktion.id === id;
+    });
+
+    // BETINGELSE: Retter opsparingen, hvis det var en opsparingspostering
+    if (fjernet && fjernet.type === "opsparing") {
+        if (fjernet.kategori === "Indsat på opsparing") {
+            opsparet = Math.max(0, opsparet - fjernet.beloeb);
+        } else {
+            opsparet = opsparet + fjernet.beloeb;
+        }
+    }
 
     // FILTER: Opretter et nyt array uden den valgte transaktion
     transaktioner = transaktioner.filter(function (transaktion) {
@@ -145,9 +158,10 @@ function fjernTransaktion(id) {
     // LOCALSTORAGE: Gemmer den opdaterede liste
     localStorage.setItem("transaktioner", JSON.stringify(transaktioner));
 
-    // Opdaterer budgettet og listen
+    // Opdaterer budget, liste og opsparing
     renderBudget();
     renderTransaktioner();
+    renderOpsparing();
 }
 
 // 5. FUNKTION TIL OPSPARING //
@@ -160,6 +174,8 @@ function renderOpsparing() {
         opsparet + " / " + opsparingsmaal + " kr.";
 
     // BETINGELSE: Hvis brugeren ikke har indtastet et mål
+    localStorage.setItem("opsparet", opsparet);
+    localStorage.setItem("opsparingsmaal", opsparingsmaal);
     if (opsparingsmaal === 0) {
 
         progressBar.style.height = "0%";
