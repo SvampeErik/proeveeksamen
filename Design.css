@@ -1,8 +1,9 @@
-/* HELE HJEMMESIDEN */
+
+/* 1. HELE HJEMMESIDEN */
 
 body {
     background-color: #fff2f1;
-    font-family: Arial, sans-serif;
+    font-family: Blippo;
     color: #382b2b;
     margin: 0;
     padding: 30px;
@@ -19,7 +20,7 @@ p {
 }
 
 
-/* NAVIGATIONSBAR */
+/* 2. NAVIGATIONSBAR */
 
 .navbar {
     display: flex;
@@ -34,12 +35,14 @@ p {
 .navbar h1 {
     font-size: 32px;
     margin: 0;
+    font-family: Impact;
 }
 
 .navbar h2 {
     margin: 0;
 }
 
+/* Logo i højre side */
 #icon {
     margin-left: auto;
 }
@@ -52,12 +55,14 @@ p {
 }
 
 
-/* DASHBOARD */
+/* 3. DASHBOARD  */
 
 .dashboard {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    max-width: none;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .main-content {
@@ -67,7 +72,7 @@ p {
 }
 
 
-/* VELKOMSTTEKST */
+/* 4. VELKOMSTTEKST */
 
 .welcome {
     background-color: #fbd5d5;
@@ -77,6 +82,8 @@ p {
 
 .welcome h2 {
     margin: 10px 0;
+    font-family: Optima;
+    font-size: 25px;
 }
 
 .welcome p {
@@ -85,13 +92,15 @@ p {
 }
 
 
-/* BUDGETKORT */
+/* 5. BUDGETOVERSIGT */
 
+/* Placering af de tre budgetkort */
 .budget-container {
     display: flex;
     gap: 20px;
 }
 
+/* Design af budgetkortene */
 .budget-kort {
     background-color: white;
     border-radius: 22px;
@@ -109,6 +118,7 @@ p {
     font-size: 24px;
 }
 
+/* Beløbene på budgetkortene */
 #samletIndtaegt,
 #samletUdgift,
 #saldo {
@@ -118,8 +128,9 @@ p {
 }
 
 
-/* DE TRE NEDERSTE BOKSE */
+/* 6. DE TRE NEDERSTE BOKSE */
 
+/* Ny postering, Mine posteringer og Opsparing */
 .bottom-section {
     display: grid;
     grid-template-columns: 1.3fr 1.3fr 0.8fr;
@@ -127,6 +138,7 @@ p {
     align-items: stretch;
 }
 
+/* Fælles design af boksene */
 .beregner,
 .posteringer,
 .savings {
@@ -136,6 +148,7 @@ p {
     min-width: 0;
 }
 
+/* Overskrifter i boksene */
 .beregner h2,
 .posteringer h2,
 .savings h2 {
@@ -143,8 +156,9 @@ p {
 }
 
 
-/* INPUTFELTER OG KATEGORIER */
+/* 7. INPUTFELTER OG KNAPPER */
 
+/* Fælles design af inputfelter og kategorier */
 input,
 select {
     background-color: #fbd5d5;
@@ -155,10 +169,15 @@ select {
     margin: 5px 5px 5px 0;
     max-width: 100%;
     box-sizing: border-box;
+    font-family: Blippo;
 }
 
-/* KNAPPER */
+/* Skrifttype i placeholders */
+input::placeholder {
+    font-family: Blippo;
+}
 
+/* Fælles design af knapper */
 button {
     background-color: #f6bcbc;
     border: none;
@@ -166,14 +185,20 @@ button {
     padding: 15px 25px;
     font-size: 16px;
     cursor: pointer;
+    font-family: Blippo;
 }
 
+/* Ændrer farve, når musen holdes over knappen */
 button:hover {
     background-color: #edaaaa;
 }
 
-/* INPUTFELTER OG KNAPPER */
 
+/* ==========================================
+   8. NY POSTERING
+========================================== */
+
+/* Inputfelt og kategori på samme række */
 .input-row {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -189,6 +214,7 @@ button:hover {
     margin: 0;
 }
 
+/* Knapperne fylder hele bredden */
 .indtaegter button,
 .udgifter button {
     display: block;
@@ -197,19 +223,23 @@ button:hover {
     margin: 0;
 }
 
+/* Afstand mellem indtægter og udgifter */
 .indtaegter,
 .udgifter {
     margin-bottom: 20px;
 }
 
-/* MINE POSTERINGER */
 
+/* 9. MINE POSTERINGER */
+
+/* Fjerner punkttegn fra listen */
 #transaktionListe {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Placering af posteringer og Fjern-knapper */
 #transaktionListe li {
     display: flex;
     justify-content: space-between;
@@ -219,73 +249,174 @@ button:hover {
     border-bottom: 1px solid #fbd5d5;
 }
 
-/* OPSPARING */
 
+/* 10. OPSPARING */
+
+/* Placering af elementerne i opsparingsboksen */
+.savings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Overskriften Opsparing */
+.savings h2 {
+    align-self: flex-start;
+    margin: 0 0 10px 0;
+}
+
+/* Tekst i opsparingsboksen */
 .savings p {
     font-size: 16px;
 }
 
+/* PROGRESSBAR */
+
+/* Baggrunden til progressbaren */
 .progress-container {
-    width: 30px;
+    width: 35px;
     height: 200px;
     background-color: #ddd;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
+
     display: flex;
     align-items: flex-end;
+    margin: 0 auto;
 }
 
+/* Den farvede del, som vokser med opsparingen */
 .progress-bar {
     width: 100%;
     height: 0%;
     background-color: #e596d5;
+    border-radius: 15px;
     transition: height 0.3s ease;
 }
 
+/* TEKST UNDER PROGRESSBAR */
+
+/* Viser opsparet beløb og procent */
+#opsparingStatus,
 #progress-text {
+    text-align: center;
+    margin: 0;
     font-size: 17px;
 }
-.savings {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto 1fr auto auto;
-    column-gap: 20px;
-    align-items: start;
+
+#progress-text {
+    font-weight: bold;
+    color: #a65e6a;
 }
 
-.savings h2,
-.savings p {
-    grid-column: 1 / -1;
-}
+/* INPUTFELTER I OPSPARING */
 
 .savings input {
-    grid-column: 1;
+    display: block;
     width: 100%;
-    margin: 5px 0;
+    margin: 3px 0;
+    box-sizing: border-box;
 }
 
-.progress-container {
-    grid-column: 2;
-    grid-row: 2 / 5;
+/* KNAPPER I OPSPARING */
+
+.savings button {
+    display: block;
+    width: 100%;
+    margin: 3px 0;
+    box-sizing: border-box;
 }
 
-/* MOBILVENLIGT DESIGN */
+/* OVERSKRIFTER I OPSPARING */
+
+.savings h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    text-align: left;
+    width: 100%;
+}
+
+
+/* 11. FOOTER */
+
+/* Hele footeren */
+.footer {
+    background-color: #fbd5d5;
+    padding: 40px 50px 20px;
+    margin-top: 40px;
+    border-radius: 25px;
+}
+
+/* Opdeler firmaoplysningerne i tre kolonner */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Overskrifter i footeren */
+.footer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Tekst i footeren */
+.footer p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Nederste del med copyright */
+.footer-bottom {
+    border-top: 1px solid #dcaeae;
+    margin-top: 30px;
+    padding-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+}
+
+
+/* 12. RESPONSIVT DESIGN */
+
+/* Tilpasser hjemmesiden til mindre skærme */
 
 @media (max-width: 900px) {
 
+    /* De tre nederste bokse placeres under hinanden */
     .bottom-section {
         grid-template-columns: 1fr;
     }
 
+    /* Budgetkortene placeres under hinanden */
     .budget-container {
         flex-direction: column;
     }
 
+    /* Mindre afstand i navigationsbaren */
     .navbar {
         gap: 20px;
     }
 
     .dashboard {
         padding: 0;
+    }
+}
+
+/* Tilpasser footeren til mobil */
+@media (max-width: 700px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
     }
 }

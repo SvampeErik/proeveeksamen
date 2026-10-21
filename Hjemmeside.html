@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="da">
 
@@ -19,11 +20,11 @@
 
 <body>
 
-    <!-- NAVIGATIONSBAR -->
+    <!-- 1. NAVIGATIONSBAR -->
+
     <header class="navbar">
 
         <h1>Budget Baddie</h1>
-
         <h2>Mit overblik</h2>
 
         <!-- Logo -->
@@ -34,10 +35,10 @@
     </header>
 
 
-    <!-- HJEMMESIDENS HOVEDINDHOLD -->
+    <!-- 2. HJEMMESIDENS HOVEDINDHOLD -->
+
     <main class="dashboard">
 
-        <!-- VENSTRE SIDE -->
         <div class="main-content">
 
             <!-- VELKOMSTTEKST -->
@@ -49,11 +50,11 @@
                     Se hvor dine penge går hen,
                     og kom tættere på dine mål.
                 </p>
-                
+
             </section>
 
-            <!-- BUDGETOVERSIGT -->
-            <!-- Viser indtægter, udgifter og rådighedsbeløb -->
+
+            <!-- 3. BUDGETOVERSIGT -->
 
             <section class="budgetoversigt">
 
@@ -61,37 +62,20 @@
 
                     <!-- Samlede indtægter -->
                     <div class="budget-kort">
-
                         <h3>Indtægter</h3>
-
-                        <p>
-                            <span id="samletIndtaegt">0</span> kr.
-                        </p>
-
+                        <p><span id="samletIndtaegt">0</span> kr.</p>
                     </div>
-
 
                     <!-- Samlede udgifter -->
                     <div class="budget-kort">
-
                         <h3>Udgifter</h3>
-
-                        <p>
-                            <span id="samletUdgift">0</span> kr.
-                        </p>
-
+                        <p><span id="samletUdgift">0</span> kr.</p>
                     </div>
-
 
                     <!-- Rådighedsbeløb -->
                     <div class="budget-kort">
-
                         <h3>Til rådighed</h3>
-
-                        <p>
-                            <span id="saldo">0</span> kr.
-                        </p>
-
+                        <p><span id="saldo">0</span> kr.</p>
                     </div>
 
                 </div>
@@ -99,115 +83,206 @@
             </section>
 
 
-            <!-- NEDERSTE DEL AF HJEMMESIDEN -->
-            <!-- Formular og posteringer placeres ved siden af hinanden -->
+            <!-- 4. NEDERSTE DEL AF HJEMMESIDEN -->
 
             <div class="bottom-section">
 
 
-                <!-- NY POSTERING / BUDGETBEREGNER -->
+                <!-- 4.1 NY POSTERING -->
+
                 <section class="beregner">
 
                     <h2>Ny postering</h2>
 
-    <!-- INDTÆGTER -->
-    <section class="indtaegter">
+                    <!-- INDTÆGTER -->
+                    <section class="indtaegter">
 
-        <h3>Indtægter</h3>
+                        <h3>Indtægter</h3>
 
-        <!-- Input og kategori på samme række -->
-        <div class="input-row">
+                        <!-- Input og kategori på samme række -->
+                        <div class="input-row">
 
-            <input
-                type="number"
-                id="indtaegt"
-                placeholder="Indtast indtægt"
-                min="0.01"
-                step="0.01"
-            >
+                            <input
+                                type="number"
+                                id="indtaegt"
+                                placeholder="Indtast indtægt"
+                                min="0.01"
+                                step="0.01"
+                            >
 
-            <select id="indtaegtKategori">
-                <option value="SU">SU</option>
-                <option value="Løn">Løn</option>
-                <option value="Andet">Andet</option>
-            </select>
+                            <select id="indtaegtKategori">
+                                <option value="SU">SU</option>
+                                <option value="Løn">Løn</option>
+                                <option value="Andet">Andet</option>
+                            </select>
 
-        </div>
+                        </div>
 
-        <!-- Knap under hele rækken -->
-        <button id="tilfoejIndtaegt" type="button">
-            Tilføj indtægt
-        </button>
+                        <button id="tilfoejIndtaegt" type="button">
+                            Tilføj indtægt
+                        </button>
 
-    </section>
-
-
-    <!-- UDGIFTER -->
-    <section class="udgifter">
-
-        <h3>Udgifter</h3>
-
-        <!-- Input og kategori på samme række -->
-        <div class="input-row">
-
-            <input
-                type="number"
-                id="udgift"
-                placeholder="Indtast udgift"
-                min="0.01"
-                step="0.01"
-            >
-
-            <select id="udgiftKategori">
-                <option value="Mad">Mad</option>
-                <option value="Transport">Transport</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Husleje">Husleje</option>
-                <option value="Andet">Andet</option>
-            </select>
-
-        </div>
-
-        <!-- Knap under hele rækken -->
-        <button id="tilfoejUdgift" type="button">
-            Tilføj udgift
-        </button>
-    </section> <!-- Lukker udgifter -->
-
-</section> <!-- Lukker beregner -->
+                    </section>
 
 
-                <!-- MINE POSTERINGER -->
+                    <!-- UDGIFTER -->
+                    <section class="udgifter">
+
+                        <h3>Udgifter</h3>
+
+                        <!-- Input og kategori på samme række -->
+                        <div class="input-row">
+
+                            <input
+                                type="number"
+                                id="udgift"
+                                placeholder="Indtast udgift"
+                                min="0.01"
+                                step="0.01"
+                            >
+
+                            <select id="udgiftKategori">
+                                <option value="Mad">Mad</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Husleje">Husleje</option>
+                                <option value="Andet">Andet</option>
+                            </select>
+
+                        </div>
+
+                        <button id="tilfoejUdgift" type="button">
+                            Tilføj udgift
+                        </button>
+
+                    </section>
+
+                </section>
+
+
+                <!-- 4.2 MINE POSTERINGER -->
+
                 <section class="posteringer">
 
                     <h2>Mine posteringer</h2>
 
-                    <!-- JavaScript indsætter transaktioner dynamisk -->
+                    <!-- JavaScript indsætter transaktionerne i listen -->
                     <ul id="transaktionListe"></ul>
 
                 </section>
 
-                       <!-- OPSPARING -->
-<aside class="savings">
 
-    <h2>Opsparing</h2>
+                <!--  4.3 OPSPARING -->
 
-    <!-- PROGRESSBAR -->
-    <div class="progress-container">
-        <div class="progress-bar"></div>
-    </div>
+                <aside class="savings">
 
-    <!-- Procenten indsættes af JavaScript -->
-    <p id="progress-text"></p>
-    <p id="maaneder-text"></p>
+                    <h2>Opsparing</h2>
 
-</aside>
+                    <!-- Viser opsparet beløb og opsparingsmål -->
+                    <p id="opsparingStatus">0 kr. sparet op</p>
 
-</div> <!-- Lukker bottom-section -->
+                    <!-- PROGRESSBAR -->
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
 
-</div> <!-- Lukker main-content -->
+                    <!-- Viser procent af opsparingsmålet -->
+                    <p id="progress-text"></p>
 
-</main> <!-- Lukker dashboard -->
+                    <!-- Viser eventuelt tid til målet -->
+                    <p id="maaneder-text"></p>
+
+
+                    <!-- OPSPARINGSMÅL -->
+                    <h3>Mit opsparingsmål</h3>
+
+                    <input
+                        type="number"
+                        id="opsparingsmaal"
+                        placeholder="Indtast opsparingsmål"
+                        min="1"
+                    >
+
+                    <button id="gemMaal" type="button">
+                        Gem mål
+                    </button>
+
+
+                    <!-- ADMINISTRER OPSPARING -->
+                    <h3>Administrer opsparing</h3>
+
+                    <input
+                        type="number"
+                        id="opsparingBeloeb"
+                        placeholder="Indtast beløb"
+                        min="0.01"
+                        step="0.01"
+                    >
+
+                    <button id="tilfoejOpsparing" type="button">
+                        Indsæt penge
+                    </button>
+
+                    <button id="haevOpsparing" type="button">
+                        Hæv penge
+                    </button>
+
+                </aside>
+
+            </div> <!-- Lukker bottom-section -->
+
+        </div> <!-- Lukker main-content -->
+
+    </main>
+
+
+    <!-- 5. FOOTER: FIRMAOPLYSNINGER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- OM VIRKSOMHEDEN -->
+            <div class="footer-info">
+
+                <h3>BudgetBaddie</h3>
+                <p>Din økonomi. Dit overblik. Dine mål.</p>
+
+            </div>
+
+
+            <!-- KONTAKT -->
+            <div class="footer-kontakt">
+
+                <h3>Kontakt</h3>
+                <p>Email: kontakt@budgetbaddie.dk</p>
+                <p>Telefon: 12 34 56 78</p>
+
+            </div>
+
+
+            <!-- FIRMAOPLYSNINGER -->
+            <div class="footer-firma">
+
+                <h3>Firmaoplysninger</h3>
+                <p>BudgetBaddie ApS</p>
+                <p>CVR: 00 00 00 00</p>
+                <p>Adresse: Budgetvej 10, 1000 København K</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT OG PROJEKTOPLYSNINGER -->
+        <div class="footer-bottom">
+
+            <p>2026 BudgetBaddie. Alle rettigheder forbeholdes.</p>
+            <p>Fiktiv virksomhed – studieprojekt</p>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
